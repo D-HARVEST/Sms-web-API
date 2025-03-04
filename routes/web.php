@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TokenController;
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SendersIdController;
+use App\Http\Controllers\HistoriqueController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -27,3 +31,12 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::resource('senders-ids', SendersIdController::class);
+Route::resource('devices', DeviceController::class);
+Route::resource('token', TokenController::class);
+Route::resource('historiques', HistoriqueController::class);
+Route::resource('dashboard', DashboardController::class);
+
+Route::get('/historique/search', [HistoriqueController::class, 'search'])->name('historique.search');
+
+
+

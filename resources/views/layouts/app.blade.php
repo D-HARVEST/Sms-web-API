@@ -161,7 +161,7 @@
 
                <!-- Start Container Fluid -->
                <div class="container-fluid">
-
+                    @include('layouts.partials.banner')
                     <!-- ========== Page Title Start ========== -->
                     @yield('content')
                     <!-- ========== Page Title End ========== -->

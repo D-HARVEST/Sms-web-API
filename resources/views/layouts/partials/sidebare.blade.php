@@ -21,56 +21,56 @@
 
          <ul class="navbar-nav" id="navbar-nav">
 
-              <li class="menu-title">Menu</li>
+            <li class="menu-title">Menu</li>
 
-              <li class="nav-item">
-                   <a class="nav-link " href="{{asset('#sidebarDashboards')}}" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+            <li class="nav-item">
+                   <a class="nav-link " href="{{route('dashboard.index')}}"  role="button" aria-expanded="false" aria-controls="sidebarDashboards">
                         <span class="nav-icon">
                              <i class="ri-dashboard-2-line"></i>
                         </span>
                         <span class="nav-text"> Dashboards </span>
                    </a>
                    
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="{{asset('#sidebarDashboards')}}" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="{{route('historiques.index')}}"  role="button" aria-expanded="false" aria-controls="sidebarDashboards">
                      <span class="nav-icon">
-                          <i class="ri-dashboard-2-line"></i>
+                        <i class="ri-history-line"></i>
                      </span>
                      <span class="nav-text"> Historiques </span>
                 </a>
                
-              </li>
-           <li class="nav-item">
-            <a class="nav-link menu-arrow" href="{{asset('#sidebarDashboards')}}" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                 <span class="nav-icon">
-                      <i class="ri-dashboard-2-line"></i>
-                 </span>
-                 <span class="nav-text"> Parametrage </span>
-            </a>
-            <div class="collapse" id="sidebarDashboards">
-                 <ul class="nav sub-navbar-nav">
-                      <li class="sub-nav-item">
-                           <a class="sub-nav-link" href="{{asset('index.html')}}">Sender_ID(Expéditeur)</a>
-                      </li>
-                      <li class="sub-nav-item">
-                           <a class="sub-nav-link" href="{{asset('dashboard-agent.html')}}">Token authentification</a>
-                      </li>
-                    
-                 </ul>
-            </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{asset('#sidebarDashboards')}}" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                     <span class="nav-icon">
-                          <i class="ri-dashboard-2-line"></i>
-                     </span>
-                     <span class="nav-text"> Documentation </span>
-                </a>
-               
-              </li>
+                    <a class="nav-link menu-arrow" href="{{asset('#sidebarDashboards')}}" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                        <span class="nav-icon">
+                            <i class="ri-settings-3-line"></i>
+                        </span>
+                        <span class="nav-text"> Parametrage </span>
+                    </a>
+                    <div class="collapse" id="sidebarDashboards">
+                        <ul class="nav sub-navbar-nav">
+                            <li class="sub-nav-item">
+                                <a class="sub-nav-link" href="{{route('senders-ids.index')}}">Sender ID(Expéditeur)</a>
+                            </li>
+                            <li class="sub-nav-item">
+                                <a class="sub-nav-link" href="{{route('token.index')}}">Token authentification</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="{{asset('#sidebarDashboards')}}"  role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                        <span class="nav-icon">
+                            <i class="ri-file-text-line"></i>
+                        </span>
+                        <span class="nav-text"> Documentation </span>
+                    </a>
+                
+            </li>
 
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                    <a class="nav-link" href="">
                         <span class="nav-icon">
                              <i class="ri-shapes-line"></i>
@@ -78,7 +78,7 @@
                         <span class="nav-text">Widgets</span>
                         <span class="badge bg-danger badge-pill text-end">Hot</span>
                    </a>
-              </li>
+              </li> --}}
 
 
 

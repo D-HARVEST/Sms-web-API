@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('devices', function (Blueprint $table) {
-            $table->id();
-            $table->string(column: 'Token');
-            $table->string(column: 'Libelle')->nullable();
-
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            if(!Schema::hasColumn('users', 'authToken')) {
+                
+                $table->string('authToken', 255);
+            }
         });
     }
 
@@ -25,6 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('devices');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

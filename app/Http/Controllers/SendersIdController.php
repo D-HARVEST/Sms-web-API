@@ -16,7 +16,8 @@ class SendersIdController extends Controller
      */
     public function index(Request $request): View
     {
-        $sendersIds = SendersId::paginate();
+        $user = auth()->user();
+        $sendersIds = $user->sendersIds()->paginate();
 
         return view('senders-id.index', compact('sendersIds'))
             ->with('i', ($request->input('page', 1) - 1) * $sendersIds->perPage());
@@ -37,7 +38,9 @@ class SendersIdController extends Controller
      */
     public function store(SendersIdRequest $request): RedirectResponse
     {
-        SendersId::create($request->validated());
+        $all = $request->validated();
+        $all['user_id'] = auth()->user()->id;
+        SendersId::create($all);
 
         return Redirect::route('senders-ids.index')
             ->with('success', 'SendersId created successfully.');

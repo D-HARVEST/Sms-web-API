@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SendersIdRequest extends FormRequest
+class MessageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,10 @@ class SendersIdRequest extends FormRequest
     {
         return [
 			// 'user_id' => 'required',
-			'Nom' => 'required|string',
-			// 'isActive' => 'required',
+			// 'sender_id' => 'required',
+			'Destinataire' => 'required|string',
+			'Contenu' => 'required|string',
+			'device_id' => 'nullable',
         ];
     }
 }

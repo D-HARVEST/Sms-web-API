@@ -2,24 +2,23 @@
 
 namespace App\Models;
 
+use App\Models\Message;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class SendersId
+ * Class Device
  *
  * @property $id
- * @property $user_id
- * @property $Nom
- * @property $isActive
+ * @property $Token
+ * @property $Libelle
  * @property $created_at
  * @property $updated_at
  *
- * @property User $user
  * @property Pret.message[] $pret.messages
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class SendersId extends Model
+class Device extends Model
 {
     
     protected $perPage = 20;
@@ -29,23 +28,15 @@ class SendersId extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['user_id', 'Nom', 'isActive'];
+    protected $fillable = ['Token', 'Libelle'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function user()
-    {
-        return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
-    }
-    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function messages()
     {
-        return $this->hasMany(\App\Models\message::class, 'id', 'sender_id');
+        return $this->hasMany(Message::class, 'id', 'device_id');
     }
     
 }
